@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+    <title>test</title>
+  </head>
+
+  <body>
+    <input type="text" value="kk@gmail.com"/>
+    <input type="text" value="123"/>
+    <button onClick={login}> login</button>
+
+<script >
+  
+//  POST request using fetch()
+fetch("http://localhost:8081/login", {
+     
+    // Adding method type
+    method: "POST",
+     
+    // Adding body or contents to send
+    body: JSON.stringify({
+       email:"kk@gmail.com",
+       password:"123"
+    }),
+     
+    // Adding headers to the request
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+ 
+// Converting to JSON
+.then(response => response.json())
+ 
+// Displaying results to console
+.then(json => console.log(json));
+</script> 
+  </body>
+</html>
